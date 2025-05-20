@@ -56,3 +56,45 @@ Aplikasi ini adalah portal berita berbasis web yang dibangun menggunakan **Next.
 4. **Jalankan proyek**
     ```bash
     npm run dev
+
+
+## Struktur Proyek
+
+WEB-PORTAL-BERITA/
+├── components/
+│   ├── Navbar.tsx               # Navigasi utama
+│   ├── Providers.tsx            # Penyedia context global (auth, tema, dll.)
+│   └── ToastProvider.tsx        # Komponen notifikasi
+│
+├── public/
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+│
+├── src/
+│   └── app/
+│       ├── api/
+│       │   └── auth/
+│       │       └── [...nextauth]/route.ts  # Konfigurasi NextAuth
+│       │
+│       ├── hooks/
+│       │   └── useNews.ts                  # Custom hook untuk fetching berita
+│       │
+│       ├── lib/
+│       │   └── fetchNews.ts                # Fungsi utilitas API
+│       │
+│       ├── login/
+│       │   └── page.tsx                    # Halaman login
+│       │
+│       ├── news/
+│       │   └── [id]/
+│       │       └── page.tsx                # Halaman detail berita berdasarkan ID
+│       │
+│       ├── layout.tsx                      # Layout global aplikasi
+│       └── page.tsx                        # Halaman utama (daftar berita)
+│
+├── globals.css                             # Styling global
+├── favicon.ico
+└── package.json
