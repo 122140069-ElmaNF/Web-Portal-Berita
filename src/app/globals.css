@@ -1,26 +1,100 @@
 @import "tailwindcss";
 @import "react-toastify/dist/ReactToastify.css";
 
+/* 🌐 Theme Variables - Soft Feminine Theme */
 :root {
-  --background: #ffffff;
-  --foreground: #aabfff;
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --background: #fff0f5; /* Lavender blush */
+  --foreground: #5a4b56; /* Deep muted plum */
+  --primary: #ec4899;    /* Pink */
+  --secondary: #c084fc;  /* Soft lavender */
+  --accent: #fbbf24;     /* Light gold */
+  --card-bg: #ffffff;
+  --border-color: #f3e8ff;
+
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #aabfff;
-    --foreground: #ededed;
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
+  --background: #fff5f7;         /* Soft blush pink */
+  --foreground: #5f4b51;         /* Muted rose-brown */
+  --primary: #ec4899;            /* Soft pink */
+  --secondary: #c084fc;          /* Lavender */
+  --accent: #fbbf24;             /* Gold pastel */
+  --card-bg: #ffffff;            /* White for contrast */
+  --border-color: #fbcfe8;       /* Pink-ish border */
   }
 }
 
+/* 🌍 Global Styles */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  transition: all 0.3s ease-in-out;
+  line-height: 1.6;
+}
+
+/* 🪟 Card Components */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+/* 🔘 Button Base */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #db2777; /* darker pink */
+}
+
+/* 🔤 Headings */
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* 📱 Responsive Padding */
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ✨ Utility Enhancements */
+.shadow-glow {
+  box-shadow: 0 0 12px rgba(236, 72, 153, 0.3); /* pink glow */
+}
+
+.rounded-xl {
+  border-radius: 1rem;
 }
